@@ -1,0 +1,153 @@
+/* ===== FOOTER BASE ===== */
+.footer {
+  margin-top: 5%;
+  background: linear-gradient(135deg, #0f5132 0%, #0b3d26 100%);
+  color: #f7f3ea;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== TOP SECTION ===== */
+.footer-top {
+  padding: 4% 0 2.5%;
+}
+
+/* ===== GRID ===== */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 2rem;
+}
+
+/* ===== BRAND ===== */
+.footer-brand {
+  margin: 0 0 0.8rem;
+  color: #f7f3ea;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+/* ===== PARAGRAPH ===== */
+.footer p {
+  color: rgba(247, 243, 234, 0.85);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* ===== HEADINGS ===== */
+.footer h4 {
+  margin-bottom: 1rem;
+  color: #e8cf8a;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* ===== BULLET LIST STYLE ===== */
+.footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer ul li {
+  margin-bottom: 0.6rem;
+  position: relative;
+  padding-left: 1rem;
+}
+
+/* custom bullet */
+.footer ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #e8cf8a;
+}
+
+/* ===== LINKS ===== */
+.footer a {
+  color: rgba(247, 243, 234, 0.85);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
+/* ===== SOCIAL ICONS ===== */
+.social-links {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.12);
+  color: #e8cf8a;
+  transition: 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* ===== CONTACT ===== */
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.7rem;
+  color: rgba(247, 243, 234, 0.9);
+  font-size: 0.9rem;
+}
+
+.contact-item svg {
+  color: #e8cf8a;
+}
+
+/* ===== BOTTOM ===== */
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding: 1rem 0;
+  font-size: 0.85rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom-inner {
+    justify-content: center;
+    text-align: center;
+  }
+}

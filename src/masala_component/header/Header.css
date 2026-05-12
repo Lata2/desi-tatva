@@ -1,0 +1,300 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 252, 244, 0.96);
+  backdrop-filter: blur(1rem);
+  border-bottom: 0.06rem solid rgba(28, 28, 28, 0.08);
+ 
+}
+
+/* ================= CONTAINER ================= */
+.container {
+  width: min(100%, 75rem);
+  margin: 1% auto;
+  padding: 0.5%;
+
+}
+
+/* ================= TOP STRIP ================= */
+.top-strip {
+  background: linear-gradient(135deg, #0f5132, #124f37);
+  color: #fff;
+  font-size: 0.82rem;
+
+}
+
+.top-strip-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  /* padding: 0.5rem 0; */
+}
+
+.top-strip-left,
+.top-strip-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.top-whatsapp {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* ================= HEADER MAIN ================= */
+.header-main {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.25rem;
+ 
+
+}
+
+/* ================= LOGO ================= */
+.header-logo {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  color: #1c1c1c;
+}
+
+.brand-mark {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: #8b5e34;
+}
+
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f5132;
+}
+
+/* ================= SEARCH ================= */
+.header-search {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border: 0.06rem solid rgba(28, 28, 28, 0.1);
+  border-radius: 999rem;
+  box-shadow: 0 0.75rem 1.5rem rgba(34, 24, 9, 0.05);
+}
+
+.header-search svg {
+  color: #8b5e34;
+}
+
+.header-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 0.95rem;
+  background: transparent;
+}
+
+/* ================= ACTIONS ================= */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.icon-btn {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 81, 50, 0.08);
+  color: #0f5132;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+
+.icon-btn:hover {
+  transform: translateY(-0.1rem);
+  background: rgba(15, 81, 50, 0.14);
+}
+
+/* ================= MENU BUTTON ================= */
+.menu-toggle {
+  display: none;
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  border-radius: 50%;
+  background: #0f5132;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ================= NAV ================= */
+.nav-shell {
+  border-top: 0.06rem solid rgba(28, 28, 28, 0.06);
+  transition: all 0.3s ease;
+}
+
+.nav-shell-inner {
+  padding: 1rem 0;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #1c1c1c;
+  font-weight: 600;
+  font-size: 0.93rem;
+  padding: 0.5rem 0;
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 0.12rem;
+  background: #c6a75e;
+  transition: 0.2s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #8b5e34;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* ================= MOBILE OVERLAY ================= */
+.mobile-overlay {
+  display: none;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 64rem) {
+  .header-main {
+    grid-template-columns: auto 1fr auto;
+  }
+}
+
+@media (max-width: 48rem) {
+  .header-main {
+    grid-template-columns: auto auto;
+    grid-template-areas:
+      "logo actions"
+      "search search";
+  }
+
+  .header-logo {
+    grid-area: logo;
+  }
+
+  .header-actions {
+    grid-area: actions;
+    margin-left: auto;
+  }
+
+  .header-search {
+    grid-area: search;
+  }
+
+  .header-icons {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* NAV MOBILE DRAWER */
+  .nav-shell {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 7rem;
+    background: rgba(255, 252, 244, 0.98);
+    max-height: 0;
+    overflow: hidden;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.12);
+  }
+
+  .nav-shell.open {
+    max-height: 80vh;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 1rem 0;
+    border-bottom: 0.06rem solid rgba(28, 28, 28, 0.06);
+  }
+
+  .nav-link::after {
+    display: none;
+  }
+
+  .mobile-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    top: 7rem;
+    background: rgba(0, 0, 0, 0.25);
+    z-index: 999;
+  }
+}
+
+@media (max-width: 30rem) {
+  .container {
+    padding: 0 1rem;
+  }
+
+  .brand-mark {
+    font-size: 1.4rem;
+  }
+
+  .brand-name {
+    font-size: 1.2rem;
+  }
+
+  .header-search {
+    padding: 0.9rem 1rem;
+  }
+}

@@ -1,0 +1,132 @@
+/* SECTION */
+.test-section {
+  padding: 12vh 6%;
+  background: #F5F5F2;
+  text-align: center;
+  color: #1C1C1C;
+}
+
+/* TITLE */
+.test-title {
+  font-size: 3rem;
+  margin-bottom: 8vh;
+  color: #0B3D2E;
+  opacity: 0;
+  transform: translateY(5vh);
+  animation: fadeUp 1s ease forwards;
+}
+
+.test-title span {
+  color: #C6A75E;
+}
+
+/* GRID */
+.test-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 4%;
+}
+
+/* CARD */
+.test-card {
+  background: white;
+  padding: 4vh 3%;
+  border-radius: 1.2rem;
+  transition: 0.5s;
+  position: relative;
+  overflow: hidden;
+
+  /* THEME SHADOW */
+  box-shadow: 0 1.5vh 3vh rgba(11, 61, 46, 0.2);
+
+  opacity: 0;
+  transform: translateY(6vh);
+  animation: fadeUp 1s ease forwards;
+}
+
+/* STAGGER */
+.test-card:nth-child(1) { animation-delay: 0.2s; }
+.test-card:nth-child(2) { animation-delay: 0.4s; }
+.test-card:nth-child(3) { animation-delay: 0.6s; }
+
+/* REVIEW TEXT */
+.review {
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: 2vh;
+  color: #1C1C1C;
+}
+
+/* NAME */
+.name {
+  color: #C6A75E;
+  font-weight: 600;
+}
+
+/* HOVER EFFECT */
+.test-card:hover {
+  transform: translateY(-2vh) scale(1.05);
+
+  /* GREEN + GOLD GLOW */
+  box-shadow: 
+    0 2vh 4vh rgba(11, 61, 46, 0.35),
+    0 0 2vh rgba(198, 167, 94, 0.4);
+}
+
+/* GOLD TOP BORDER ANIMATION */
+.test-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 0.3rem;
+  width: 100%;
+  background: linear-gradient(to right, #0B3D2E, #C6A75E);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.5s;
+}
+
+.test-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* SOFT BACKGROUND GLOW */
+.test-card::after {
+  content: "";
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  top: -50%;
+  left: -50%;
+  background: radial-gradient(circle, rgba(198, 167, 94, 0.2), transparent 70%);
+  opacity: 0;
+  transition: 0.5s;
+}
+
+.test-card:hover::after {
+  opacity: 1;
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(6vh);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .test-title {
+    font-size: 2.2rem;
+  }
+
+  .test-card {
+    padding: 5vh 4%;
+  }
+}

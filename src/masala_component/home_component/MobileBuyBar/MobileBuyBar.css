@@ -1,0 +1,32 @@
+.mobile-buy-bar {
+  display: none;
+}
+
+.mobile-buy-bar a {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1rem;
+  text-decoration: none;
+  font-weight: 700;
+  color: #fff;
+  background: #0f5132;
+}
+
+.mobile-buy-bar a:last-child {
+  background: #c6a75e;
+  color: #24180c;
+}
+
+@media (max-width: 48rem) {
+  .mobile-buy-bar {
+    display: flex;
+    position: sticky;
+    bottom: 0;
+    z-index: 20;
+    width: 100%;
+    border-top: 0.06rem solid rgba(28, 28, 28, 0.08);
+  }
+}

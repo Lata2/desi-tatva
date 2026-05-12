@@ -1,0 +1,128 @@
+.offers-section {
+  padding: 3rem 5%;
+  background: #F8FAF5;
+  text-align: center;
+}
+
+/* SIMPLE TITLE */
+.section-title {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  color: #0B3D2E;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  font-family: -apple-system, sans-serif;
+}
+
+.section-title span {
+  color: #C6A75E;
+}
+
+/* TIGHT GRID */
+.offers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* CLEAN CARDS */
+.offer-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.8rem;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  border: 1px solid rgba(255,255,255,0.8);
+  position: relative;
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.offer-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.offer-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.12);
+}
+
+/* DISCOUNT TAG */
+.discount-tag {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: #C6A75E;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* CONTENT */
+.offer-card h3 {
+  color: #0B3D2E;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.offer-card p {
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+}
+
+/* SIMPLE PRICING */
+.price-row {
+  margin-bottom: 1.2rem;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 1rem;
+  margin-right: 0.8rem;
+}
+
+.new-price {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #0B3D2E;
+}
+
+/* CLEAN BUTTON */
+.buy-btn {
+  width: 100%;
+  background: #0B3D2E;
+  color: white;
+  border: none;
+  padding: 0.9rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.buy-btn:hover {
+  background: #C6A75E;
+  color: #0B3D2E;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(198,167,94,0.3);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .offers-section { padding: 2rem 3%; }
+  .offers-grid { gap: 1.2rem; }
+  .offer-card { padding: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .offers-grid { grid-template-columns: 1fr; }
+  .section-title { margin-bottom: 1.5rem; }
+}

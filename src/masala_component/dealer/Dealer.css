@@ -1,0 +1,218 @@
+.dealer-section {
+  /* padding: 6rem 5%; */
+  background: linear-gradient(135deg, #fdfcf8 0%, #eef4ef 50%, #f5f5f2 100%);
+  min-height: 100vh;
+}
+
+.container { max-width: 1200px; margin: 0 auto; }
+
+.dealer-hero {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  color: #0b3d2e;
+  margin-bottom: 1rem;
+}
+
+.hero-title span { color: #c6a75e; }
+
+.hero-desc {
+  font-size: 1.2rem;
+  color: rgba(11, 61, 46, 0.8);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.dealer-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.dealer-form-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  padding: 3rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(198, 166, 94, 0.2);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.1);
+}
+
+.dealer-form-card h2 {
+  color: #0b3d2e;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-subtitle {
+  color: #c6a75e;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  color: #0b3d2e;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border: 2px solid rgba(11, 61, 46, 0.1);
+  border-radius: 1rem;
+  font-size: 1rem;
+  background: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #c6a75e;
+  box-shadow: 0 0 0 3px rgba(198, 166, 94, 0.1);
+}
+
+.ct-btn {
+  width: 100%;
+  padding: 1.2rem;
+  background: linear-gradient(135deg, #c6a75e, #e0c27a);
+  color: #0b3d2e;
+  border: none;
+  border-radius: 999rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ct-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 1rem 2rem rgba(198, 166, 94, 0.4);
+}
+
+.ct-btn:disabled {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.dealer-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.benefit-item {
+  text-align: center;
+  padding: 1rem 0.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.benefit-item:hover {
+  transform: translateY(-5px);
+}
+
+.benefit-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, #c6a75e, #e0c27a);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0b3d2e;
+}
+
+.benefit-item h4 {
+  color: #0b3d2e;
+  margin-bottom: 0.5rem;
+}
+
+.quick-contact {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  border-radius: 1.5rem;
+  text-align: center;
+}
+
+.quick-contact h4 {
+  color: #0b3d2e;
+  margin-bottom: 1.5rem;
+}
+
+.contact-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1.5rem;
+  border-radius: 999rem;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.contact-btn.phone {
+  background: linear-gradient(135deg, #0b3d2e, #145c44);
+  color: white;
+}
+
+.contact-btn.whatsapp {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white;
+}
+
+.contact-btn.email {
+  background: linear-gradient(135deg, #c6a75e, #e0c27a);
+  color: #0b3d2e;
+}
+
+.contact-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 62rem) {
+  .dealer-content { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 40rem) {
+  .dealer-section { padding: 4rem 5%; }
+  .dealer-form-card { padding: 2rem; }
+}

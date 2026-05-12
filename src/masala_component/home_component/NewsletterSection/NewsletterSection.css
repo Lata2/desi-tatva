@@ -1,0 +1,114 @@
+/* ===== FIXED BOTTOM COMPACT BAR ===== */
+.newsletter-fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10vh;              /* 👈 EXACT HEIGHT CONTROL */
+  min-height: 70px;
+  z-index: 999;
+  background: linear-gradient(135deg, #b87333, #d4af37, #c68642);
+  box-shadow: 0 -6px 20px rgba(0,0,0,0.25);
+  padding: 0 1rem;           /* 👈 reduced padding */
+  display: flex;
+  align-items: center;
+}
+
+/* ===== INNER WRAPPER ===== */
+.newsletter-content {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ===== TEXT COMPACT ===== */
+.newsletter-text h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;          /* 👈 reduced */
+  font-weight: 700;
+  margin: 0;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.newsletter-text p {
+  font-size: 0.75rem;       /* 👈 compact */
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* ===== BUTTONS ULTRA COMPACT ===== */
+.newsletter-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.newsletter-actions {
+  display: flex;
+  gap: 0.4rem;
+}
+
+/* ===== BASE BUTTON ===== */
+.bn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.55rem;   /* 👈 reduced */
+  border-radius: 1rem;
+  font-size: 0.7rem;          /* 👈 smaller text */
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 1;
+  transition: 0.2s ease;
+}
+
+/* ===== ICON SIZE CONTROL ===== */
+.bn svg {
+  font-size: 0.8rem;          /* 👈 smaller icon */
+}
+
+/* ===== EMAIL BUTTON ===== */
+.email-bn {
+  background: #111;
+  color: #fff;
+}
+
+.email-bn:hover {
+  transform: scale(1.05);
+}
+
+/* ===== WHATSAPP BUTTON ===== */
+.whatsapp-bn {
+  background: #25D366;
+  color: #fff;
+}
+
+.whatsapp-bn:hover {
+  transform: scale(1.05);
+}
+
+.whatsapp-bn:hover {
+  transform: scale(1.05);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .newsletter-content {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.3rem;
+  }
+
+  .newsletter-text {
+    text-align: center;
+  }
+
+  .newsletter-actions {
+    justify-content: center;
+  }
+}

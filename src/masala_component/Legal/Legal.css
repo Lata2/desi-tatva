@@ -1,0 +1,10 @@
+.legal-section { padding: 6rem 5%; background: linear-gradient(135deg, #fdfcf8, #f5f5f2); min-height: 100vh; }
+.legal-content h2 { color: #c6a75e; margin: 2rem 0 1rem; font-size: 1.5rem; }
+.legal-content ul { padding-left: 2rem; margin-bottom: 1rem; }
+.policy-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 3rem 0; }
+.policy-card { padding: 2rem; border-radius: 1.5rem; border: 2px solid; }
+.policy-card.eligible { border-color: #d4edda; background: #f8fff9; }
+.policy-card.not-eligible { border-color: #f8d7da; background: #fff5f5; }
+.refund-steps ol { padding-left: 2rem; }
+.important-note { background: #fff3cd; padding: 2rem; border-radius: 1rem; margin-top: 3rem; }
+@media (max-width: 768px) { .policy-grid { grid-template-columns: 1fr; } }
