@@ -5,23 +5,20 @@
   background: rgba(255, 252, 244, 0.96);
   backdrop-filter: blur(1rem);
   border-bottom: 0.06rem solid rgba(28, 28, 28, 0.08);
- 
 }
 
-/* ================= CONTAINER ================= */
+/* CONTAINER */
 .container {
   width: min(100%, 75rem);
-  margin: 1% auto;
-  padding: 0.5%;
-
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-/* ================= TOP STRIP ================= */
+/* TOP STRIP */
 .top-strip {
   background: linear-gradient(135deg, #0f5132, #124f37);
   color: #fff;
   font-size: 0.82rem;
-
 }
 
 .top-strip-inner {
@@ -30,7 +27,7 @@
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
-  /* padding: 0.5rem 0; */
+  padding: 0.55rem 0;
 }
 
 .top-strip-left,
@@ -50,44 +47,36 @@
   font-weight: 700;
 }
 
-/* ================= HEADER MAIN ================= */
+/* HEADER MAIN */
 .header-main {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: 1.25rem;
- 
-
+  gap: 1rem;
+  padding: 0.8rem 0;
 }
 
-/* ================= LOGO ================= */
+/* LOGO */
 .header-logo {
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.6rem;
-  color: #1c1c1c;
 }
 
-.brand-mark {
-  font-family: 'Noto Sans Devanagari', sans-serif;
-  font-size: 1.7rem;
-  font-weight: 800;
-  color: #8b5e34;
+.logo-img {
+  width: 100%;
+  max-width: 10rem;
+  height: auto;
+  object-fit: contain;
+  display: block;
 }
 
-.brand-name {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #0f5132;
-}
-
-/* ================= SEARCH ================= */
+/* SEARCH */
 .header-search {
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  padding: 1rem 1.25rem;
+  padding: 0.95rem 1.2rem;
   background: #fff;
   border: 0.06rem solid rgba(28, 28, 28, 0.1);
   border-radius: 999rem;
@@ -96,17 +85,18 @@
 
 .header-search svg {
   color: #8b5e34;
+  font-size: 1rem;
 }
 
 .header-search input {
   width: 100%;
   border: none;
   outline: none;
-  font-size: 0.95rem;
   background: transparent;
+  font-size: 0.95rem;
 }
 
-/* ================= ACTIONS ================= */
+/* ACTIONS */
 .header-actions {
   display: flex;
   align-items: center;
@@ -129,15 +119,16 @@
   background: rgba(15, 81, 50, 0.08);
   color: #0f5132;
   text-decoration: none;
-  transition: 0.2s ease;
+  transition: 0.25s ease;
+  font-size: 1rem;
 }
 
 .icon-btn:hover {
-  transform: translateY(-0.1rem);
+  transform: translateY(-0.12rem);
   background: rgba(15, 81, 50, 0.14);
 }
 
-/* ================= MENU BUTTON ================= */
+/* MENU BUTTON */
 .menu-toggle {
   display: none;
   width: 3rem;
@@ -147,16 +138,17 @@
   background: #0f5132;
   color: #fff;
   cursor: pointer;
+  font-size: 1rem;
 }
 
-/* ================= NAV ================= */
+/* NAVIGATION */
 .nav-shell {
   border-top: 0.06rem solid rgba(28, 28, 28, 0.06);
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .nav-shell-inner {
-  padding: 1rem 0;
+  padding: 0.9rem 0;
 }
 
 .nav {
@@ -167,23 +159,24 @@
 }
 
 .nav-link {
+  position: relative;
   text-decoration: none;
   color: #1c1c1c;
   font-weight: 600;
   font-size: 0.93rem;
-  padding: 0.5rem 0;
-  position: relative;
+  padding-bottom: 0.2rem;
+  transition: 0.2s ease;
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -0.2rem;
   width: 0;
   height: 0.12rem;
   background: #c6a75e;
-  transition: 0.2s ease;
+  transition: 0.25s ease;
 }
 
 .nav-link:hover,
@@ -196,19 +189,23 @@
   width: 100%;
 }
 
-/* ================= MOBILE OVERLAY ================= */
+/* MOBILE OVERLAY */
 .mobile-overlay {
   display: none;
 }
 
-/* ================= RESPONSIVE ================= */
+/* TABLET */
 @media (max-width: 64rem) {
-  .header-main {
-    grid-template-columns: auto 1fr auto;
+
+  .logo-img {
+    max-width: 8.8rem;
   }
+
 }
 
+/* MOBILE */
 @media (max-width: 48rem) {
+
   .header-main {
     grid-template-columns: auto auto;
     grid-template-areas:
@@ -227,6 +224,7 @@
 
   .header-search {
     grid-area: search;
+    padding: 0.85rem 1rem;
   }
 
   .header-icons {
@@ -239,7 +237,6 @@
     justify-content: center;
   }
 
-  /* NAV MOBILE DRAWER */
   .nav-shell {
     position: fixed;
     left: 0;
@@ -276,25 +273,33 @@
     position: fixed;
     inset: 0;
     top: 7rem;
-    background: rgba(0, 0, 0, 0.25);
+    background: rgba(0, 0, 0, 0.28);
     z-index: 999;
   }
 }
 
+/* SMALL MOBILE */
 @media (max-width: 30rem) {
+
   .container {
-    padding: 0 1rem;
+    padding: 0 0.9rem;
   }
 
-  .brand-mark {
-    font-size: 1.4rem;
+  .logo-img {
+    max-width: 7rem;
   }
 
-  .brand-name {
-    font-size: 1.2rem;
+  .top-strip {
+    font-size: 0.72rem;
   }
 
-  .header-search {
-    padding: 0.9rem 1rem;
+  .top-strip-left,
+  .top-strip-right {
+    gap: 0.6rem;
   }
+
+  .header-search input {
+    font-size: 0.88rem;
+  }
+
 }

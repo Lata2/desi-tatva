@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
+import logo from '../../image/desi-tatva-log.png';
+
 import {
   FaSearch,
   FaShoppingCart,
@@ -9,6 +11,7 @@ import {
   FaBars,
   FaTimes,
 } from 'react-icons/fa';
+
 import './Header.css';
 
 const navItems = [
@@ -35,12 +38,15 @@ export default function Header() {
     const onEsc = (e) => {
       if (e.key === 'Escape') closeMenu();
     };
+
     window.addEventListener('keydown', onEsc);
+
     return () => window.removeEventListener('keydown', onEsc);
   }, []);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? 'hidden' : '';
+
     return () => {
       document.body.style.overflow = '';
     };
@@ -48,8 +54,11 @@ export default function Header() {
 
   return (
     <header className="header">
+
+      {/* TOP STRIP */}
       <div className="top-strip">
         <div className="container top-strip-inner">
+
           <div className="top-strip-left">
             <span>Free Shipping above ₹499</span>
             <span>COD Available</span>
@@ -63,21 +72,32 @@ export default function Header() {
               rel="noreferrer"
               className="top-whatsapp"
             >
-              <FaWhatsapp /> WhatsApp
+              <FaWhatsapp />
+              WhatsApp
             </a>
+
             <span>EN / हिंदी</span>
           </div>
+
         </div>
       </div>
 
+      {/* HEADER MAIN */}
       <div className="container header-main">
-        <Link to="/" className="header-logo" aria-label="Home" onClick={closeMenu}>
-          <span className="brand-mark">देशी</span>
-          <span className="brand-name">ƬΛƬVΛ</span>
+
+        {/* LOGO */}
+        <Link to="/" className="header-logo">
+          <img
+            src={logo}
+            alt="Desi Tatva"
+            className="logo-img"
+          />
         </Link>
 
+        {/* SEARCH */}
         <div className="header-search" role="search">
           <FaSearch />
+
           <input
             type="text"
             placeholder="Search products, recipes, offers..."
@@ -85,19 +105,38 @@ export default function Header() {
           />
         </div>
 
+        {/* ACTIONS */}
         <div className="header-actions">
+
           <div className="header-icons">
-            <Link to="/wishlist" className="icon-btn" aria-label="Wishlist">
+
+            <Link
+              to="/wishlist"
+              className="icon-btn"
+              aria-label="Wishlist"
+            >
               <FaHeart />
             </Link>
-            <Link to="/account" className="icon-btn" aria-label="Account">
+
+            <Link
+              to="/account"
+              className="icon-btn"
+              aria-label="Account"
+            >
               <FaUserCircle />
             </Link>
-            <Link to="/products" className="icon-btn" aria-label="Cart">
+
+            <Link
+              to="/products"
+              className="icon-btn"
+              aria-label="Cart"
+            >
               <FaShoppingCart />
             </Link>
+
           </div>
 
+          {/* MOBILE MENU BUTTON */}
           <button
             type="button"
             className="menu-toggle"
@@ -108,12 +147,21 @@ export default function Header() {
           >
             {menuOpen ? <FaTimes /> : <FaBars />}
           </button>
+
         </div>
+
       </div>
 
+      {/* NAVIGATION */}
       <div className={`nav-shell ${menuOpen ? 'open' : ''}`}>
+
         <div className="container nav-shell-inner">
-          <nav className="nav" id="primary-navigation" aria-label="Primary navigation">
+
+          <nav
+            className="nav"
+            id="primary-navigation"
+            aria-label="Primary navigation"
+          >
             {navItems.map((item) => (
               <NavLink
                 key={item.label}
@@ -125,10 +173,19 @@ export default function Header() {
               </NavLink>
             ))}
           </nav>
+
         </div>
+
       </div>
 
-      {menuOpen && <div className="mobile-overlay" onClick={closeMenu} />}
+      {/* MOBILE OVERLAY */}
+      {menuOpen && (
+        <div
+          className="mobile-overlay"
+          onClick={closeMenu}
+        />
+      )}
+
     </header>
   );
 }
