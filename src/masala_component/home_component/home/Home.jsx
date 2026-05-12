@@ -10,13 +10,13 @@ import ReviewsSection from '../ReviewsSection/ReviewsSection';
 import NewsletterSection from '../NewsletterSection/NewsletterSection';
 import MobileBuyBar from '../MobileBuyBar/MobileBuyBar';
 import FeaturedProducts from '../FeaturedProducts/FeaturedProducts';
-// import bgImg from '../../../image/desi-tatva-bg.png';
+import bgImg from '../../../image/desi-tatva-bg.png';
 
 export default function Home() {
   return (
     <div
       className="home-page"
-      // style={{ backgroundImage: `url(${bgImg})` }}
+      style={{ backgroundImage: `url(${bgImg})` }}
     >
       <HeroSection />
       <FeaturedProducts />
